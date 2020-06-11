@@ -8,21 +8,43 @@
     mc:Ignorable="d" d:DesignWidth="1487.5" d:DesignHeight="942.5">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <NavigationView Content="NavigationView">
+        <NavigationView x:Name="NavView" 
+                        Header="{Binding Path=Content.NavigationTitle, ElementName=ContentFrame}"
+                        Loaded="NavView_Loaded"
+                        SelectionChanged="NavView_SelectionChanged">
             <NavigationView.MenuItems>
-                <NavigationViewItem Content="menu item 1">
+                <NavigationViewItemHeader Content="One"></NavigationViewItemHeader>
+                <NavigationViewItem Content="Menu item 1" Tag="page1">
                     <NavigationViewItem.Icon>
                         <SymbolIcon Symbol="Audio"/>
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
-                <NavigationViewItem Content="menu item 1">
+                <NavigationViewItemSeparator/>
+                <NavigationViewItemHeader Content="Two"></NavigationViewItemHeader>
+                <NavigationViewItem Content="Menu item 2" Tag="page2">
                     <NavigationViewItem.Icon>
                         <SymbolIcon Symbol="Account"/>
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
+                <NavigationViewItem Content="Menu item 3" Tag="page3">
+                    <NavigationViewItem.Icon>
+                        <SymbolIcon Symbol="AddFriend"/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+                <NavigationViewItemSeparator/>
             </NavigationView.MenuItems>
-        </NavigationView>
+            <NavigationView.AutoSuggestBox>
+                <AutoSuggestBox x:Name="controlsSearchBox"
+								VerticalAlignment="Center"
+								PlaceholderText="Search"
+								QueryIcon="Find"
+								RequestedTheme="Light">
+                </AutoSuggestBox>
+            </NavigationView.AutoSuggestBox>
 
+            <Frame x:Name="ContentFrame" />
+
+        </NavigationView>
     </Grid>
 
 </Page>
