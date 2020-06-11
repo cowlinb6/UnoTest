@@ -8,45 +8,21 @@
     mc:Ignorable="d" d:DesignWidth="1487.5" d:DesignHeight="942.5">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="40"/>
-            <ColumnDefinition />
-        </Grid.ColumnDefinitions>
-        <Grid Grid.Column="0">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="40"/>
-                <RowDefinition Height="20"/>
-                <RowDefinition Height="20"/>
-                <RowDefinition Height="20"/>
-                <RowDefinition Height="20"/>
-                <RowDefinition Height="20"/>
-                <RowDefinition />
-                <RowDefinition Height="20"/>
-                <RowDefinition Height="20"/>
-                <RowDefinition Height="20"/>
-                <RowDefinition Height="20"/>
-            </Grid.RowDefinitions>
-            <Ellipse Grid.Row="0" Fill="DarkBlue"></Ellipse>
-            <Ellipse Grid.Row="1" Fill="DarkGreen" Margin="1,1,1,1"></Ellipse>
-            <Ellipse Grid.Row="2" Fill="DarkGreen" Margin="1,1,1,1"></Ellipse>
-            <Ellipse Grid.Row="3" Fill="DarkGreen" Margin="1,1,1,1"></Ellipse>
-            <Ellipse Grid.Row="4" Fill="DarkGreen" Margin="1,1,1,1"></Ellipse>
-            <Ellipse Grid.Row="5" Fill="DarkGreen" Margin="1,1,1,1"></Ellipse>
-            <Ellipse Grid.Row="6" Fill="DarkKhaki" Margin="1,1,1,1"></Ellipse>
-            <Ellipse Grid.Row="7" Fill="DarkGreen" Margin="1,1,1,1"></Ellipse>
-            <Ellipse Grid.Row="8" Fill="DarkGreen" Margin="1,1,1,1"></Ellipse>
-            <Ellipse Grid.Row="9" Fill="DarkGreen" Margin="1,1,1,1"></Ellipse>
-            <Ellipse Grid.Row="10" Fill="DarkGreen" Margin="1,1,1,1"></Ellipse>
-        </Grid>
-        <Grid Grid.Column="1" Margin="0,0,0,0">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="80"/>
-                <RowDefinition />
-                <RowDefinition Height="80"/>
-            </Grid.RowDefinitions>
-            <Ellipse Grid.Row="0" Fill="LightBlue"/>
-            <Ellipse Grid.Row="2" Fill="LightGreen"/>
-        </Grid>
+        <NavigationView Content="NavigationView">
+            <NavigationView.MenuItems>
+                <NavigationViewItem Content="menu item 1">
+                    <NavigationViewItem.Icon>
+                        <SymbolIcon Symbol="Audio"/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+                <NavigationViewItem Content="menu item 1">
+                    <NavigationViewItem.Icon>
+                        <SymbolIcon Symbol="Account"/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+            </NavigationView.MenuItems>
+        </NavigationView>
+
     </Grid>
 
 </Page>
