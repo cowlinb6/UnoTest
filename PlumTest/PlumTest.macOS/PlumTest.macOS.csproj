@@ -69,6 +69,9 @@
     <Reference Include="System.Memory" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="IdentityModel.OidcClient">
+      <Version>3.1.2</Version>
+    </PackageReference>
     <PackageReference Include="Uno.UI" Version="2.4.4" />
     <PackageReference Include="Uno.UI.RemoteControl" Version="2.4.4" Condition="'$(Configuration)'=='Debug'" />
     <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="1.1.1" />
@@ -91,12 +94,6 @@
     <ImageAsset Include="Assets.xcassets\Contents.json" />
     <ImageAsset Include="Assets.xcassets\unologo.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\unologo.imageset\unoplatform.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\Plum.Common\Plum.Common.csproj">
-      <Project>{84617e24-5eef-4741-9dae-5e37f6f054c1}</Project>
-      <Name>Plum.Common</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
