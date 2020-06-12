@@ -8,7 +8,7 @@
     mc:Ignorable="d" d:DesignWidth="1487.5" d:DesignHeight="942.5">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <SplitView x:Name="splitView" DisplayMode="CompactInline">
+        <!--<SplitView x:Name="splitView" DisplayMode="CompactInline">
             <SplitView.Pane>
                 <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="2,2,2,2">
                     <Button x:Name="ButtonTogglePane" Content="..." Click="ButtonTogglePane_OnClick"/>
@@ -34,13 +34,19 @@
                     </VisualState>
                 </VisualStateGroup>
             </VisualStateManager.VisualStateGroups>
-        </SplitView>
-        <!--<NavigationView x:Name="NavView" 
+        </SplitView>-->
+        <NavigationView x:Name="NavView" 
                         Header="{Binding Path=Content.NavigationTitle, ElementName=ContentFrame}"
                         Loaded="NavView_Loaded"
                         SelectionChanged="NavView_SelectionChanged"
                         IsBackButtonVisible="Collapsed">
             <NavigationView.MenuItems>
+                <NavigationViewItem Content="Login" Tag="loginView">
+                    <NavigationViewItem.Icon>
+                        <SymbolIcon Symbol="Link"/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+                <NavigationViewItemSeparator/>
                 <NavigationViewItemHeader Content="One"></NavigationViewItemHeader>
                 <NavigationViewItem Content="Menu item 1" Tag="page1">
                     <NavigationViewItem.Icon>
@@ -61,7 +67,6 @@
                 </NavigationViewItem>
                 <NavigationViewItemSeparator/>
             </NavigationView.MenuItems>
-            -->
         <!--<NavigationView.AutoSuggestBox>
                 <AutoSuggestBox x:Name="controlsSearchBox"
 								VerticalAlignment="Center"
@@ -70,11 +75,10 @@
 								RequestedTheme="Light">
                 </AutoSuggestBox>
             </NavigationView.AutoSuggestBox>-->
-        <!--
 
             <Frame x:Name="ContentFrame" />
 
-        </NavigationView>-->
+        </NavigationView>
     </Grid>
 
 </Page>

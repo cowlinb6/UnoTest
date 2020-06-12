@@ -1,0 +1,23 @@
+﻿<Page
+    x:Class="PlumTest.Shared.Login"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PlumTest.Shared"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" RequestedTheme="Dark">
+
+    <Page.DataContext>
+        <local:LoginModel></local:LoginModel>
+    </Page.DataContext>
+
+    <Grid>
+        <StackPanel>
+            <TextBlock x:Name="ResultText" Text="Result" DataContext="{Binding Result}"></TextBlock>
+            <TextBlock x:Name="IdentityToken" Text="IdentityToken" DataContext="{Binding IdentityToken}"></TextBlock>
+            <TextBlock x:Name="AccessToken" Text="AccessToken" DataContext="{Binding AccessToken}"></TextBlock>
+            <Button Content="Login" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Login_OnClick"/>
+        </StackPanel>
+    </Grid>
+</Page>
