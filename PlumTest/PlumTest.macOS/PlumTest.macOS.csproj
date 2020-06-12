@@ -73,9 +73,7 @@
     <PackageReference Include="Uno.UI.RemoteControl" Version="2.4.4" Condition="'$(Configuration)'=='Debug'" />
     <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="1.1.1" />
     <PackageReference Include="Microsoft.Extensions.Logging.Filter" Version="1.1.2" />
-    <PackageReference Include="Xamarin.Essentials">
-      <Version>1.5.3.2</Version>
-    </PackageReference>
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
   </ItemGroup>
   <Import Project="..\PlumTest.Shared\PlumTest.Shared.projitems" Label="Shared" Condition="Exists('..\PlumTest.Shared\PlumTest.Shared.projitems')" />
   <ItemGroup>
