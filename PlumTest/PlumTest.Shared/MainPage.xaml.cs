@@ -28,44 +28,50 @@ namespace PlumTest
             this.InitializeComponent();
         }
 
-        private void NavView_Loaded(object sender, RoutedEventArgs e)
+        private void ButtonTogglePane_OnClick(object sender, RoutedEventArgs e)
         {
-            // set the initial SelectedItem 
-            foreach (NavigationViewItemBase item in NavView.MenuItems)
-            {
-                if (item is NavigationViewItem && item.Tag.ToString() == "page1")
-                {
-                    NavView.SelectedItem = item;
-                    break;
-                }
-            }
+            splitView.IsPaneOpen = !splitView.IsPaneOpen;
         }
 
-        private void NavView_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
-        {
-            if (args.IsSettingsSelected)
-            {
-                //ContentFrame.Navigate(typeof(SettingsPage));
-            }
-            else
-            {
-                NavigationViewItem item = args.SelectedItem as NavigationViewItem;
-                NavView_Navigate(item);
-            }
-        }
+        
+        //private void NavView_Loaded(object sender, RoutedEventArgs e)
+        //{
+        //    // set the initial SelectedItem 
+        //    foreach (NavigationViewItemBase item in NavView.MenuItems)
+        //    {
+        //        if (item is NavigationViewItem && item.Tag.ToString() == "page1")
+        //        {
+        //            NavView.SelectedItem = item;
+        //            break;
+        //        }
+        //    }
+        //}
 
-        private void NavView_Navigate(NavigationViewItem item)
-        {
-            switch (item.Tag)
-            {
-                case "page1":
-                    ContentFrame.Navigate(typeof(Page1)); break;
-                case "page2":
-                    ContentFrame.Navigate(typeof(Page2)); break;
-                //case "page3":
-                  //  ContentFrame.Navigate(typeof(Page3)); break;
-            }
-        }
+        //private void NavView_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
+        //{
+        //    if (args.IsSettingsSelected)
+        //    {
+        //        //ContentFrame.Navigate(typeof(SettingsPage));
+        //    }
+        //    else
+        //    {
+        //        NavigationViewItem item = args.SelectedItem as NavigationViewItem;
+        //        NavView_Navigate(item);
+        //    }
+        //}
+
+        //private void NavView_Navigate(NavigationViewItem item)
+        //{
+        //    switch (item.Tag)
+        //    {
+        //        case "page1":
+        //            ContentFrame.Navigate(typeof(Page1)); break;
+        //        case "page2":
+        //            ContentFrame.Navigate(typeof(Page2)); break;
+        //        //case "page3":
+        //          //  ContentFrame.Navigate(typeof(Page3)); break;
+        //    }
+        //}
 
     }
 }

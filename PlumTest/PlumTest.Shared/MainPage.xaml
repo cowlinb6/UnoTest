@@ -8,10 +8,38 @@
     mc:Ignorable="d" d:DesignWidth="1487.5" d:DesignHeight="942.5">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <NavigationView x:Name="NavView" 
+        <SplitView x:Name="splitView" DisplayMode="CompactInline">
+            <SplitView.Pane>
+                <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="2,2,2,2">
+                    <Button x:Name="ButtonTogglePane" Content="..." Click="ButtonTogglePane_OnClick"/>
+                </StackPanel>
+            </SplitView.Pane>
+            <Grid>
+                <Ellipse Fill="LightCoral"/>
+            </Grid>
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="SizeStateGroup">
+                    <VisualState x:Name="WideState">
+                        <VisualState.StateTriggers>
+                            <AdaptiveTrigger MinWindowHeight="0" MinWindowWidth="900" />
+                        </VisualState.StateTriggers>
+                        <VisualState.Setters>
+                            <Setter Target="splitView.(SplitView.DisplayMode)" Value="Inline" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="NarrowState">
+                        <VisualState.StateTriggers>
+                            <AdaptiveTrigger MinWindowHeight="0" MinWindowWidth="0" />
+                        </VisualState.StateTriggers>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+        </SplitView>
+        <!--<NavigationView x:Name="NavView" 
                         Header="{Binding Path=Content.NavigationTitle, ElementName=ContentFrame}"
                         Loaded="NavView_Loaded"
-                        SelectionChanged="NavView_SelectionChanged">
+                        SelectionChanged="NavView_SelectionChanged"
+                        IsBackButtonVisible="Collapsed">
             <NavigationView.MenuItems>
                 <NavigationViewItemHeader Content="One"></NavigationViewItemHeader>
                 <NavigationViewItem Content="Menu item 1" Tag="page1">
@@ -33,18 +61,20 @@
                 </NavigationViewItem>
                 <NavigationViewItemSeparator/>
             </NavigationView.MenuItems>
-            <NavigationView.AutoSuggestBox>
+            -->
+        <!--<NavigationView.AutoSuggestBox>
                 <AutoSuggestBox x:Name="controlsSearchBox"
 								VerticalAlignment="Center"
 								PlaceholderText="Search"
 								QueryIcon="Find"
 								RequestedTheme="Light">
                 </AutoSuggestBox>
-            </NavigationView.AutoSuggestBox>
+            </NavigationView.AutoSuggestBox>-->
+        <!--
 
             <Frame x:Name="ContentFrame" />
 
-        </NavigationView>
+        </NavigationView>-->
     </Grid>
 
 </Page>
