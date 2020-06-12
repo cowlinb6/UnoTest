@@ -22,6 +22,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Constants.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\ColorToBrushConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ISubPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Conversation\Actions\HoldConversationAction.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Conversation\Actions\EndConversationAction.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Conversation\Actions\IConversationAction.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
     </Compile>
@@ -29,9 +32,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Models\ChatConversationModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Models\IConversationModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Models\PhoneConversationModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Conversation\Conversations\ChatConversationModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Conversation\Conversations\IConversationModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Conversation\Conversations\PhoneConversationModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ConversationViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\ConversationView.xaml.cs">
       <DependentUpon>ConversationView.xaml</DependentUpon>
@@ -56,5 +59,8 @@
   </ItemGroup>
   <ItemGroup>
     <PRIResource Include="$(MSBuildThisFileDirectory)Strings\en\Resources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Models\Conversation\Conversations\" />
   </ItemGroup>
 </Project>

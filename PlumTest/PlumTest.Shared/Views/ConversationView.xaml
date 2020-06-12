@@ -17,16 +17,44 @@
 
     <Page.Resources>
         <Converters:ColorToBrushConverter x:Key="ColorToBrushConverter"/>
-                                     
+
+        <DataTemplate x:Key="ConversationActionTemplate" x:DataType="Models:IConversationAction">
+            <Button Content="{x:Bind Name}" Click="{x:Bind Run}"/>
+        </DataTemplate>
+
         <DataTemplate x:Key="ConversationModelTemplate" x:DataType="Models:IConversationModel">
-            <StackPanel Orientation="Vertical" Width="400">
-                <Ellipse Fill="{x:Bind Color, Mode=OneTime, Converter={StaticResource ColorToBrushConverter}}" Width="100"/>
-                <TextBlock Text="{x:Bind Name, Mode=OneTime}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <StackPanel Orientation="Horizontal" Width="400" BorderBrush="Black" BorderThickness="2">
+                <Rectangle Fill="{x:Bind Color, Mode=OneTime, Converter={StaticResource ColorToBrushConverter}}" Width="40" Margin="2"/>
+                <TextBlock Text="{x:Bind Name, Mode=OneTime}" Margin="2" Width="200"/>
+                <GridView 
+                    Width="50" Margin="2"
+                    ItemTemplate="{StaticResource ConversationActionTemplate}" 
+                    ItemsSource="{x:Bind CurrentActions}"/>
             </StackPanel>
         </DataTemplate>
     </Page.Resources>
-    
+
     <Grid>
-        <ListView ItemTemplate="{StaticResource ConversationModelTemplate}" ItemsSource="{x:Bind ViewModel.Conversations}"></ListView>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="400"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="5*"></RowDefinition>
+            <RowDefinition Height="20"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Ellipse Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" Fill="Fuchsia" Margin="2" />
+
+        <ListView Grid.Column="0" Grid.Row="1" Grid.RowSpan="2" ItemTemplate="{StaticResource ConversationModelTemplate}" ItemsSource="{x:Bind ViewModel.Conversations}"/>
+
+        <Ellipse Grid.Column="1" Grid.Row="1" Fill="Bisque" />
+        <Ellipse Grid.Column="2" Grid.Row="1" Fill="Aqua" />
+        <Ellipse Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="2" Fill="Coral" />
+        <Ellipse Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3" Fill="DarkSlateGray" />
+
     </Grid>
 </Page>

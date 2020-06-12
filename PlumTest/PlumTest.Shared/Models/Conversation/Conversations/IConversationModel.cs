@@ -1,4 +1,5 @@
-﻿using Windows.UI;
+﻿using System.Collections.Generic;
+using Windows.UI;
 
 namespace PlumTest.Shared.Models
 {
@@ -9,5 +10,8 @@ namespace PlumTest.Shared.Models
         Color Color { get; }
 
         string Name { get; set; }
+        string CompanyName { get; set; }
+
+        IEnumerable<IConversationAction> CurrentActions { get; set; }
     }
 }

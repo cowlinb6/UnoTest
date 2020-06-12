@@ -31,5 +31,10 @@ namespace PlumTest.Shared.Views
 
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

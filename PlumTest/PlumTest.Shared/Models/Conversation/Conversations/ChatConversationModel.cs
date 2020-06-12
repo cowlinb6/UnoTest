@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Windows.UI;
 
 namespace PlumTest.Shared.Models
@@ -10,5 +11,8 @@ namespace PlumTest.Shared.Models
 
         public string Id => $"{Guid.NewGuid()}";
         public string Name { get; set; }
+        public string CompanyName { get; set; }
+
+        public IEnumerable<IConversationAction> CurrentActions { get; set; }
     }
 }
