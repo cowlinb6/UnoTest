@@ -7,14 +7,26 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     xmlns:ViewModels="using:PlumTest.Shared.ViewModels"
+    xmlns:Models="using:PlumTest.Shared.Models"
+    xmlns:Converters="using:PlumTest.Shared.Converters"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Page.DataContext>
         <ViewModels:ConversationViewModel></ViewModels:ConversationViewModel>
     </Page.DataContext>
-    
-    <Grid >
 
-        <ListView ItemsSource="{x:Bind ViewModel.Conversations}"></ListView>
+    <Page.Resources>
+        <Converters:ColorToBrushConverter x:Key="ColorToBrushConverter"/>
+                                     
+        <DataTemplate x:Key="ConversationModelTemplate" x:DataType="Models:IConversationModel">
+            <StackPanel Orientation="Vertical" Width="400">
+                <Ellipse Fill="{x:Bind Color, Mode=OneTime, Converter={StaticResource ColorToBrushConverter}}" Width="100"/>
+                <TextBlock Text="{x:Bind Name, Mode=OneTime}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            </StackPanel>
+        </DataTemplate>
+    </Page.Resources>
+    
+    <Grid>
+        <ListView ItemTemplate="{StaticResource ConversationModelTemplate}" ItemsSource="{x:Bind ViewModel.Conversations}"></ListView>
     </Grid>
 </Page>

@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Windows.UI;
 
 namespace PlumTest.Shared.Models
 {
@@ -8,6 +6,7 @@ namespace PlumTest.Shared.Models
     {
         string Type { get; }
         string Id { get; }
+        Color Color { get; }
 
         string Name { get; set; }
     }
