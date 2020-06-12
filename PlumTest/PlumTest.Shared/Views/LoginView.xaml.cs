@@ -1,37 +1,35 @@
 ﻿using IdentityModel.Client;
 using IdentityModel.OidcClient;
 using Plum.Common;
+using PlumTest.Shared.ViewModels;
 using System;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
-
-namespace PlumTest.Shared
+namespace PlumTest.Shared.Views
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class Login : Page
+    public sealed partial class LoginView : Page
     {
         OidcClient _oidcClient;
         LoginResult _loginResult;
         HttpClient _httpClient;
 
-        public LoginModel ViewModel { get; set; }
+        public LoginViewModel ViewModel { get; set; }
         
 
-        public Login()
+        public LoginView()
         {
-            ViewModel = new LoginModel();
-            DataContext = ViewModel;
+            ViewModel = new LoginViewModel();
 
-            InitializeComponent();
-            
+            InitializeComponent();            
 
             _httpClient = new HttpClient();
+            _httpClient.BaseAddress = new Uri(Constants.ApiUri);
         }
 
         private async void Login_OnClick(object sender, RoutedEventArgs e)
@@ -61,6 +59,11 @@ namespace PlumTest.Shared
             ViewModel.AccessToken = _loginResult.AccessToken;
 
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _loginResult?.AccessToken ?? string.Empty);
+
+            var response = await _httpClient.GetAsync("");
+            var content = await response.Content.ReadAsStringAsync();
+            ViewModel.UserInfo = content;
+
         }
 
     }

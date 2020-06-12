@@ -1,14 +1,20 @@
 ﻿<Page
-    x:Class="PlumTest.Shared.Page2"
+    x:Class="PlumTest.Shared.Views.ConversationView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:PlumTest.Shared"
+    xmlns:local="using:PlumTest.Shared.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
+    xmlns:ViewModels="using:PlumTest.Shared.ViewModels"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
-        <TextBlock>Page 2</TextBlock>
+    <Page.DataContext>
+        <ViewModels:ConversationViewModel></ViewModels:ConversationViewModel>
+    </Page.DataContext>
+    
+    <Grid >
+
+        <ListView ItemsSource="{x:Bind ViewModel.Conversations}"></ListView>
     </Grid>
 </Page>

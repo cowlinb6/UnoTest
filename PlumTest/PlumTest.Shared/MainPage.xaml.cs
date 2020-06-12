@@ -1,4 +1,5 @@
 ﻿using PlumTest.Shared;
+using PlumTest.Shared.Views;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -64,12 +65,17 @@ namespace PlumTest
         {
             switch (item.Tag)
             {
-                case "page1":
-                    ContentFrame.Navigate(typeof(Page1)); break;
-                case "page2":
-                    ContentFrame.Navigate(typeof(Page2)); break;
-                case "loginView":
-                    ContentFrame.Navigate(typeof(Login)); break;
+                case nameof(ConversationView):
+                    {
+                        ContentFrame.Navigate(typeof(ConversationView)); 
+                        break;
+                    }
+
+                case nameof(LoginView):
+                    {
+                        ContentFrame.Navigate(typeof(LoginView));
+                        break;
+                    }
             }
         }
 

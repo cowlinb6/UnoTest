@@ -10,7 +10,7 @@ namespace Plum.Common
         //public static string AuthorityUri = "https://login.xarios.dev";
         public static string AuthorityUri = "https://benlogin.ngrok.io";
         public static string RedirectUri = "plum.oauth2:/oauth2redirect";
-        public static string ApiUri = "https://demo.identityserver.io/api/";
+        public static string ApiUri = "https://benlogin.ngrok.io/connect/userinfo";
         public static string ClientId = "plum";
         public static string Scope = "openid offline_access";
     }

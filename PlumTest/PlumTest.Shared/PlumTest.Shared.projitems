@@ -20,30 +20,24 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Browser.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Constants.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Header.xaml.cs">
-      <DependentUpon>Header.xaml</DependentUpon>
-    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)ISubPage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Login.xaml.cs">
-      <DependentUpon>Login.xaml</DependentUpon>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\LoginView.xaml.cs">
+      <DependentUpon>LoginView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)LoginModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\LoginViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Page1.xaml.cs">
-      <DependentUpon>Page1.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Page2.xaml.cs">
-      <DependentUpon>Page2.xaml</DependentUpon>
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ChatConversationModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\IConversationModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\PhoneConversationModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ConversationViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\ConversationView.xaml.cs">
+      <DependentUpon>ConversationView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="$(MSBuildThisFileDirectory)Header.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="$(MSBuildThisFileDirectory)Login.xaml">
+    <Page Include="$(MSBuildThisFileDirectory)Views\LoginView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -51,11 +45,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="$(MSBuildThisFileDirectory)Page1.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="$(MSBuildThisFileDirectory)Page2.xaml">
+    <Page Include="$(MSBuildThisFileDirectory)Views\ConversationView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

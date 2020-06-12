@@ -1,22 +1,24 @@
 ﻿<Page
-    x:Class="PlumTest.Shared.Login"
+    x:Class="PlumTest.Shared.Views.LoginView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:PlumTest.Shared"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="using:PlumTest.Shared.Views"
     mc:Ignorable="d"
+    xmlns:ViewModels="using:PlumTest.Shared.ViewModels"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" RequestedTheme="Dark">
 
     <Page.DataContext>
-        <local:LoginModel></local:LoginModel>
+        <ViewModels:LoginViewModel></ViewModels:LoginViewModel>
     </Page.DataContext>
 
     <Grid>
         <StackPanel>
-            <TextBlock x:Name="ResultText" Text="Result" DataContext="{Binding Result}"></TextBlock>
-            <TextBlock x:Name="IdentityToken" Text="IdentityToken" DataContext="{Binding IdentityToken}"></TextBlock>
-            <TextBlock x:Name="AccessToken" Text="AccessToken" DataContext="{Binding AccessToken}"></TextBlock>
+            <TextBlock x:Name="ResultText" Text="{x:Bind ViewModel.Result, Mode=OneWay}"/>
+            <TextBlock x:Name="IdentityToken" Text="{x:Bind ViewModel.IdentityToken, Mode=OneWay}"/>
+            <TextBlock x:Name="AccessToken" Text="{x:Bind ViewModel.AccessToken, Mode=OneWay}"/>
+            <TextBlock x:Name="UserInfo" Text="{x:Bind ViewModel.UserInfo, Mode=OneWay}"/>
             <Button Content="Login" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Login_OnClick"/>
         </StackPanel>
     </Grid>

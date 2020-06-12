@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PlumTest.Shared.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -15,18 +16,20 @@ using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
-namespace PlumTest.Shared
+namespace PlumTest.Shared.Views
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class Page1 : Page, ISubPage
+    public sealed partial class ConversationView : Page
     {
-        public Page1()
-        {
-            this.InitializeComponent();
-        }
+        public ConversationViewModel ViewModel { get; set; }
 
-        public string NavigationTitle => "This is Page 1";
+        public ConversationView()
+        {
+            ViewModel = new ConversationViewModel();
+
+            InitializeComponent();
+        }
     }
 }

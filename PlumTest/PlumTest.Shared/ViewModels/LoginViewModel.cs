@@ -1,9 +1,9 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace PlumTest.Shared
+namespace PlumTest.Shared.ViewModels
 {
-    public class LoginModel : INotifyPropertyChanged
+    public class LoginViewModel : INotifyPropertyChanged
     {
         private string _result = "This is the result";
         public string Result
@@ -49,6 +49,22 @@ namespace PlumTest.Shared
                 }
 
                 _accessToken = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private string _userInfo = "This is the UserInfo";
+        public string UserInfo
+        {
+            get { return _userInfo; }
+            set
+            {
+                if (value == _userInfo)
+                {
+                    return;
+                }
+
+                _userInfo = value;
                 OnPropertyChanged();
             }
         }
