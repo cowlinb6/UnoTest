@@ -22,8 +22,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Constants.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\ColorToBrushConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ISubPage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Models\Conversation\Actions\HoldConversationAction.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Models\Conversation\Actions\EndConversationAction.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Conversation\Actions\ChatReplyConversationAction.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Conversation\Actions\CallHoldConversationAction.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Conversation\Actions\CallEndConversationAction.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Conversation\Actions\IConversationAction.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>

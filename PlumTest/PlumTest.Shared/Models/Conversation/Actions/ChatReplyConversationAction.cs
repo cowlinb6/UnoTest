@@ -2,13 +2,13 @@
 
 namespace PlumTest.Shared.Models
 {
-    public class HoldConversationAction : IConversationAction
+    public class ChatReplyConversationAction : IConversationAction
     {
         public async Task Run()
         {
             await Task.CompletedTask;
         }
 
-        public string Name => "Hold";
+        public string Name => "Chat Reply";
     }
 }

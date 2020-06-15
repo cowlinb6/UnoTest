@@ -1,4 +1,5 @@
-﻿using PlumTest.Shared.ViewModels;
+﻿using PlumTest.Shared.Models;
+using PlumTest.Shared.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -32,9 +33,10 @@ namespace PlumTest.Shared.Views
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void ListConversations_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            var selectedConversation = (sender as ListView).SelectedItem as IConversationModel;
+            ViewModel.CurrentConversation = selectedConversation;
         }
     }
 }
