@@ -30,7 +30,7 @@ namespace PlumTest.Shared.Views
         {
             ViewModel = new ConversationViewModel();
 
-            InitializeComponent();
+            this.InitializeComponent();
         }
 
         private void ListConversations_SelectionChanged(object sender, SelectionChangedEventArgs e)

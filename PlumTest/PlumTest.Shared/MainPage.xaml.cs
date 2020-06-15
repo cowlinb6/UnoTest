@@ -38,11 +38,11 @@ namespace PlumTest
         private void NavView_Loaded(object sender, RoutedEventArgs e)
         {
             // set the initial SelectedItem 
-            foreach (NavigationViewItemBase item in NavView.MenuItems)
+            foreach (NavigationViewItemBase item in this.NavView.MenuItems)
             {
                 if (item is NavigationViewItem && item.Tag.ToString() == "page1")
                 {
-                    NavView.SelectedItem = item;
+                    this.NavView.SelectedItem = item;
                     break;
                 } 
             }
@@ -67,13 +67,13 @@ namespace PlumTest
             {
                 case nameof(ConversationView):
                     {
-                        ContentFrame.Navigate(typeof(ConversationView)); 
+                        this.ContentFrame.Navigate(typeof(ConversationView)); 
                         break;
                     }
 
                 case nameof(LoginView):
                     {
-                        ContentFrame.Navigate(typeof(LoginView));
+                        this.ContentFrame.Navigate(typeof(LoginView));
                         break;
                     }
             }

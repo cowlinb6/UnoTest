@@ -19,7 +19,7 @@
         <Converters:ColorToBrushConverter x:Key="ColorToBrushConverter"/>
 
         <DataTemplate x:Key="ConversationActionTemplate" x:DataType="Models:IConversationAction">
-            <Button Content="{x:Bind Name}" Click="{x:Bind Run}"/>
+            <Button Content="{x:Bind Name}" Command="{x:Bind RunCommand}"/>
         </DataTemplate>
 
         <DataTemplate x:Key="ConversationModelTemplate" x:DataType="Models:IConversationModel">

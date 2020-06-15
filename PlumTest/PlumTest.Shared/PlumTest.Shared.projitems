@@ -19,8 +19,13 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Browser.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\AsyncCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\IAsyncCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\RelayCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Constants.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\ColorToBrushConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\IErrorHandler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\TaskExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ISubPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Conversation\Actions\ChatReplyConversationAction.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Conversation\Actions\CallHoldConversationAction.cs" />

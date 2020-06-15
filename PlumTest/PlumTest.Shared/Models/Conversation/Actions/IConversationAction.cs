@@ -1,10 +1,10 @@
-﻿using System.Threading.Tasks;
+﻿using System.Windows.Input;
 
 namespace PlumTest.Shared.Models
 {
     public interface IConversationAction
     {
-        Task Run();
+        ICommand RunCommand { get; }
 
         string Name { get; }
     }
