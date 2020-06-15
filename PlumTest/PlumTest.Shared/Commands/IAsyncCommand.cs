@@ -8,4 +8,10 @@ namespace PlumTest.Shared.Commands
         Task ExecuteAsync();
         bool CanExecute();
     }
+
+    public interface IAsyncCommand<T> : ICommand
+    {
+        Task ExecuteAsync(T parameter);
+        bool CanExecute(T parameter);
+    }
 }

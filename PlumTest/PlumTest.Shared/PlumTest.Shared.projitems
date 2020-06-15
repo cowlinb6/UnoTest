@@ -21,7 +21,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Browser.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\AsyncCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\IAsyncCommand.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Commands\RelayCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Constants.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\ColorToBrushConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\IErrorHandler.cs" />
